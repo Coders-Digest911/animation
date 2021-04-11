@@ -10,19 +10,43 @@
             overflow-x: hidden;
             overflow-y: hidden;
         }
-            #mainSquare {
-                width: 10%;
-                height: 10%;
-                background-color: rgba(0, 255, 204);
+            .bottomBar {
+                width: 0%;
+                height: 3%;
+                background-color: rgba(58, 67, 250);
                 position: absolute;
-                top:40%;
-                left: 90%;
+                top:97%;
+                left: 0%;
+            }
+             .topBar {
+                width: 100%;
+                height: 3%;
+                background-color: rgba(58, 67, 250);
+                position: absolute;
+                top:0%;
+                left: 0%;
+            }
+            .leftBar {
+                width: 3%;
+                height: 0%;
+                background-color: rgba(58, 67, 250);
+                position: absolute;
+                top: 0%;
+                left: 0%;
+            }
+            .rightBar {
+                width: 3%;
+                height: 0%;
+                background-color: rgba(58, 67, 250);
+                position: absolute;
+                top: 167%;
+                left: 97%;
             }
             .backgroundGrid {
                 width: 5%;
                 height:5%;
                 position: absolute;
-                background-color: rgba(77, 77, 77);
+                background-color: rgba(15, 38, 77);
             }
         </style>
     </head>
@@ -39,11 +63,36 @@
             }
         }
     </script>
-    <div id = "mainSquare"></div>
+    <div class = "bottomBar"> </div>
+    <div class = "topBar"> </div>
+    <div class = "leftBar"> </div>
+    <div class = "rightBar"> </div>
     <script>
         anime({
-            targets:"#mainSquare",
-            left: 0,
+            targets:".bottomBar",
+            width: 100 + "%",
+            direction: "alternate",
+            loop: true,
+            easing:"easeInOutSine"
+        })
+        anime({
+            targets:".rightBar",
+            height: 100 + "%",
+            top: 0 + "%",
+            direction: "alternate",
+            loop: true,
+            easing:"easeInOutSine"
+        })
+        anime({
+            targets:".leftBar",
+            height: 100 + "%",
+            direction: "alternate",
+            loop: true,
+            easing:"easeInOutSine"
+        })
+        anime({
+            targets:".topBar",
+            width: 0 + "%",
             direction: "alternate",
             loop: true,
             easing:"easeInOutSine"
