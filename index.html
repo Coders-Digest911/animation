@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>anime.js AWESOMENESS!</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+        <style>
+            #mainSquare {
+                width: 10%;
+                height: 10%;
+                background-color: rgba(0, 255, 204);
+                position: absolute;
+                top:40%;
+                left: 90%;
+            }
+        </style>
+    </head>
+    <body>
+    <div id = "mainSquare"></div>
+    <script>
+        anime({
+            targets:"#mainSquare",
+            left: 0,
+            direction: "alternate",
+            loop: true,
+            easing:"easeInOutSine"
+        })
+    </script>
+    </body>
+</html>
