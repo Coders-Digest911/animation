@@ -6,6 +6,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
         <style>
+        body {
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
             #mainSquare {
                 width: 10%;
                 height: 10%;
@@ -14,9 +18,27 @@
                 top:40%;
                 left: 90%;
             }
+            .backgroundGrid {
+                width: 5%;
+                height:5%;
+                position: absolute;
+                background-color: rgba(77, 77, 77);
+            }
         </style>
     </head>
     <body>
+  
+    <script>
+        for(var i = 0; i < 19; i++){
+            for(var c = 0; c < 19; c++){
+            var sweet = $("<div>");
+            sweet.addClass("backgroundGrid")
+            .css("top", (c*5.5) + "%")
+            .css("left", (i*5.5) + "%")
+            $("body").append(sweet)
+            }
+        }
+    </script>
     <div id = "mainSquare"></div>
     <script>
         anime({
@@ -26,6 +48,15 @@
             loop: true,
             easing:"easeInOutSine"
         })
+        anime({
+            targets: '.backgroundGrid',
+          scale: [
+            {value: .1, easing: 'easeOutSine', duration: 500},
+            {value: 1, easing: 'easeInOutQuad', duration: 1200}
+          ],
+          delay: anime.stagger(200, {grid: [14, 5], from: 'center'}),
+          loop:true
+});
     </script>
     </body>
 </html>
